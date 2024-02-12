@@ -11,6 +11,11 @@
 		AEAD00062B7A85D700CC284C /* API in Frameworks */ = {isa = PBXBuildFile; productRef = AEAD00052B7A85D700CC284C /* API */; };
 		AEAD000A2B7A88F600CC284C /* Slot+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD00092B7A88F600CC284C /* Slot+Helper.swift */; };
 		AEAD000C2B7A89A300CC284C /* SlotHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD000B2B7A89A300CC284C /* SlotHelperTests.swift */; };
+		AEAD000E2B7A8CFA00CC284C /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD000D2B7A8CFA00CC284C /* SampleData.swift */; };
+		AEAD00102B7A955B00CC284C /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD000F2B7A955B00CC284C /* ScheduleView.swift */; };
+		AEAD00122B7A95CC00CC284C /* SlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD00112B7A95CC00CC284C /* SlotView.swift */; };
+		AEAD00142B7A990A00CC284C /* SlotDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD00132B7A990A00CC284C /* SlotDetailsView.swift */; };
+		AEAD00162B7A997200CC284C /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD00152B7A997200CC284C /* CachedAsyncImage.swift */; };
 		AEADFFC92B7A7AFB00CC284C /* TechTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADFFC82B7A7AFB00CC284C /* TechTestApp.swift */; };
 		AEADFFCB2B7A7AFB00CC284C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADFFCA2B7A7AFB00CC284C /* ContentView.swift */; };
 		AEADFFCD2B7A7AFC00CC284C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEADFFCC2B7A7AFC00CC284C /* Assets.xcassets */; };
@@ -42,6 +47,11 @@
 		AEAD00032B7A823E00CC284C /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = API; path = ../API; sourceTree = "<group>"; };
 		AEAD00092B7A88F600CC284C /* Slot+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Slot+Helper.swift"; sourceTree = "<group>"; };
 		AEAD000B2B7A89A300CC284C /* SlotHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotHelperTests.swift; sourceTree = "<group>"; };
+		AEAD000D2B7A8CFA00CC284C /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		AEAD000F2B7A955B00CC284C /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		AEAD00112B7A95CC00CC284C /* SlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotView.swift; sourceTree = "<group>"; };
+		AEAD00132B7A990A00CC284C /* SlotDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotDetailsView.swift; sourceTree = "<group>"; };
+		AEAD00152B7A997200CC284C /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		AEADFFC52B7A7AFB00CC284C /* TechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEADFFC82B7A7AFB00CC284C /* TechTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTestApp.swift; sourceTree = "<group>"; };
 		AEADFFCA2B7A7AFB00CC284C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,7 +172,11 @@
 		AEADFFF32B7A7B0D00CC284C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AEAD00152B7A997200CC284C /* CachedAsyncImage.swift */,
 				AEADFFCA2B7A7AFB00CC284C /* ContentView.swift */,
+				AEAD000F2B7A955B00CC284C /* ScheduleView.swift */,
+				AEAD00132B7A990A00CC284C /* SlotDetailsView.swift */,
+				AEAD00112B7A95CC00CC284C /* SlotView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				AEADFFCC2B7A7AFC00CC284C /* Assets.xcassets */,
+				AEAD000D2B7A8CFA00CC284C /* SampleData.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -325,9 +340,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEAD00002B7A7C5500CC284C /* Logger.swift in Sources */,
+				AEAD000E2B7A8CFA00CC284C /* SampleData.swift in Sources */,
 				AEADFFCB2B7A7AFB00CC284C /* ContentView.swift in Sources */,
+				AEAD00102B7A955B00CC284C /* ScheduleView.swift in Sources */,
 				AEAD000A2B7A88F600CC284C /* Slot+Helper.swift in Sources */,
+				AEAD00142B7A990A00CC284C /* SlotDetailsView.swift in Sources */,
 				AEADFFC92B7A7AFB00CC284C /* TechTestApp.swift in Sources */,
+				AEAD00122B7A95CC00CC284C /* SlotView.swift in Sources */,
+				AEAD00162B7A997200CC284C /* CachedAsyncImage.swift in Sources */,
 				AEADFFFE2B7A7BE900CC284C /* DataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

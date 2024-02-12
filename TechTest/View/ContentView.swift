@@ -8,14 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var dataStore = DataStore()
+    
+    @Environment(\.scenePhase) private var scenePhase
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack(spacing: 0) {
+                Divider()
+                                
+                ScheduleView(slots: dataStore.slots)
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .opacity(dataStore.isUpdating ? 1 : 0)
+                }
+            }
+            .navigationTitle("SwiftLeeds")
+            .task {
+                try? await dataStore.update()
+            }
         }
-        .padding()
     }
 }
 
