@@ -1,5 +1,5 @@
 //
-//  TechTestTests.swift
+//  APITests.swift
 //  TechTestTests
 //
 //  Created by Matthew Gallagher on 12/02/2024.
@@ -9,7 +9,7 @@ import XCTest
 @testable import TechTest
 import API
 
-final class TechTestTests: XCTestCase {
+final class APITests: XCTestCase {
     func testLoadingSchedule() async throws {
         /// When
         let slots = try await API.retrieveSchedule()
