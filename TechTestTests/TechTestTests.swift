@@ -7,25 +7,20 @@
 
 import XCTest
 @testable import TechTest
+import API
 
 final class TechTestTests: XCTestCase {
     func testLoadingSchedule() async throws {
-        /// Given
-        let store = DataStore()
-        
         /// When
-        let slots = try await store.retrieveScheduleTest()
+        let slots = try await API.retrieveSchedule()
 
         /// Then
         XCTAssertEqual(slots.count, 28)
     }
     
     func testLoadingScheduleActivity() async throws {
-        /// Given
-        let store = DataStore()
-        
         /// When
-        let slots = try await store.retrieveScheduleTest()
+        let slots = try await API.retrieveSchedule()
 
         /// Then
         let slot = slots[0]
@@ -43,11 +38,8 @@ final class TechTestTests: XCTestCase {
     }
 
     func testLoadingSchedulePresentation() async throws {
-        /// Given
-        let store = DataStore()
-        
         /// When
-        let slots = try await store.retrieveScheduleTest()
+        let slots = try await API.retrieveSchedule()
 
         /// Then
         let slot = slots[2]
