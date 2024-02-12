@@ -10,6 +10,8 @@ import SwiftUI
 
 @main
 struct TechTestApp: App {
+    @State private var dataStore = DataStore()
+    
     init() {
         URLCache.shared.memoryCapacity = 50_000_000
         URLCache.shared.diskCapacity = 500_000_000
@@ -20,6 +22,10 @@ struct TechTestApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(dataStore)
+                .task {
+                    try? await dataStore.update()
+                }
         }
     }
 }

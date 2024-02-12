@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var dataStore = DataStore()
-    
-    @Environment(\.scenePhase) private var scenePhase
+    @Environment(DataStore.self) private var dataStore
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                scheduleDates
+                
                 Divider()
                                 
-                ScheduleView(slots: dataStore.slots)
+                if let selectedDate = dataStore.selectedDate, let slots = dataStore.slots[selectedDate] {
+                    ScheduleView(slots: slots)
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -27,10 +29,29 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("SwiftLeeds")
-            .task {
-                try? await dataStore.update()
+        }
+    }
+    
+    var scheduleDates: some View {
+        HStack(spacing: 16) {
+            ForEach(dataStore.dates, id: \.self) { date in
+                VStack {
+                    Button(action: {
+                        dataStore.selectedDate = date
+                    }, label: {
+                        Text(date.formatted(.dateTime.day().month()))
+                            .overlay(alignment: .bottom) {
+                                Rectangle()
+                                    .frame(height: 2)
+                                    .offset(y: 2)
+                                    .opacity(date == dataStore.selectedDate ? 1 : 0)
+                            }
+                    })
+                }
             }
         }
+        .foregroundStyle(.text)
+        .padding(.bottom)
     }
 }
 

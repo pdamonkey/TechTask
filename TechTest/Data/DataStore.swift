@@ -12,8 +12,10 @@ import API
 
 @Observable
 final class DataStore {
-    private(set) var slots: [Slot] = []
+    private(set) var slots: [Date: [Slot]] = [:]
     private(set) var isUpdating: Bool = false
+    
+    var selectedDate: Date?
     
     @MainActor
     func update() async throws {
@@ -22,29 +24,23 @@ final class DataStore {
         isUpdating = true
         
         let slots = try await API.retrieveSchedule()
-        self.slots = slots
+        let sortedSlots = slots.sorted(by: { $0.date < $1.date })
+        
+        let splitSlots: [Date: [Slot]] = sortedSlots.reduce(into: [:]) { results, slot in
+            guard let midday = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: slot.date) else { return }
+            
+            var slots = results[midday] ?? []
+            slots.append(slot)
+            results[midday] = slots
+        }
+        
+        self.slots = splitSlots
+        selectedDate = dates.first
         
         isUpdating = false
     }
     
-    @MainActor
-    func handleScenePhase(oldPhase: ScenePhase, newPhase: ScenePhase) async {
-        switch newPhase {
-        case .active:
-            Logger.data.info("App is active")
-
-            do {
-                try await update()
-            } catch {
-                Logger.data.error("\(error.localizedDescription)")
-            }
-        case .inactive:
-            Logger.data.info("App is inactive")
-        case .background:
-            Logger.data.info("App is in the background")
-        @unknown default:
-            Logger.data.error("App in unknown scene phase")
-            fatalError("unknown scene phase")
-        }
+    var dates: [Date] {
+        slots.keys.sorted()
     }
 }
