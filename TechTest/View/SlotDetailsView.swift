@@ -33,15 +33,18 @@ struct SlotDetailsView: View {
                 Text(slot.title)
                     .font(.title)
                     .multilineTextAlignment(.center)
+                    .accessibilityIdentifier("title")
 
                 if let subtitle = slot.subtitle {
                     Text(subtitle)
                         .font(.subheadline)
+                        .accessibilityIdentifier("subtitle")
                 }
 
                 Text(slot.details)
                     .font(.body.weight(.thin))
                     .padding(.top)
+                    .accessibilityIdentifier("details")
 
                 Spacer()
             }
