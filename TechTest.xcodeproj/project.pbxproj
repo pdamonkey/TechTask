@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F80BBB42B7B8C07007E8F05 /* API in Frameworks */ = {isa = PBXBuildFile; productRef = 2F80BBB32B7B8C07007E8F05 /* API */; };
 		AEAD00002B7A7C5500CC284C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADFFFF2B7A7C5500CC284C /* Logger.swift */; };
 		AEAD00062B7A85D700CC284C /* API in Frameworks */ = {isa = PBXBuildFile; productRef = AEAD00052B7A85D700CC284C /* API */; };
 		AEAD000A2B7A88F600CC284C /* Slot+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD00092B7A88F600CC284C /* Slot+Helper.swift */; };
@@ -44,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AEAD00032B7A823E00CC284C /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = API; path = ../API; sourceTree = "<group>"; };
 		AEAD00092B7A88F600CC284C /* Slot+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Slot+Helper.swift"; sourceTree = "<group>"; };
 		AEAD000B2B7A89A300CC284C /* SlotHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotHelperTests.swift; sourceTree = "<group>"; };
 		AEAD000D2B7A8CFA00CC284C /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
@@ -72,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEAD00062B7A85D700CC284C /* API in Frameworks */,
+				2F80BBB42B7B8C07007E8F05 /* API in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +103,6 @@
 		AEADFFBC2B7A7AFB00CC284C = {
 			isa = PBXGroup;
 			children = (
-				AEAD00032B7A823E00CC284C /* API */,
 				AEADFFC72B7A7AFB00CC284C /* TechTest */,
 				AEADFFD82B7A7AFC00CC284C /* TechTestTests */,
 				AEADFFE22B7A7AFC00CC284C /* TechTestUITests */,
@@ -224,6 +224,7 @@
 			name = TechTest;
 			packageProductDependencies = (
 				AEAD00052B7A85D700CC284C /* API */,
+				2F80BBB32B7B8C07007E8F05 /* API */,
 			);
 			productName = TechTest;
 			productReference = AEADFFC52B7A7AFB00CC284C /* TechTest.app */;
@@ -297,6 +298,9 @@
 				Base,
 			);
 			mainGroup = AEADFFBC2B7A7AFB00CC284C;
+			packageReferences = (
+				2F80BBB22B7B8C07007E8F05 /* XCRemoteSwiftPackageReference "TechTestAPI" */,
+			);
 			productRefGroup = AEADFFC62B7A7AFB00CC284C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -686,7 +690,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		2F80BBB22B7B8C07007E8F05 /* XCRemoteSwiftPackageReference "TechTestAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pdamonkey/TechTestAPI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		2F80BBB32B7B8C07007E8F05 /* API */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F80BBB22B7B8C07007E8F05 /* XCRemoteSwiftPackageReference "TechTestAPI" */;
+			productName = API;
+		};
 		AEAD00052B7A85D700CC284C /* API */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = API;

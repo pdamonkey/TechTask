@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "techtestapi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pdamonkey/TechTestAPI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "12c0a1eddac7b80e9bb13d3f2dcf9834948042c9"
+      }
+    }
+  ],
+  "version" : 2
+}
